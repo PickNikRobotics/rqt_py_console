@@ -29,6 +29,90 @@
    <property name="bottomMargin">
     <number>0</number>
    </property>
+
+   <item>
+    <layout class="QHBoxLayout" name="header_layout1">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+
+     <item>
+      <widget class="QPushButton" name="load_button">
+       <property name="toolTip">
+        <string>Load Script</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <widget class="Line" name="line_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <widget class="QPushButton" name="save_button">
+       <property name="toolTip">
+        <string>Save Script</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <widget class="QPushButton" name="save_as_button">
+       <property name="toolTip">
+        <string>Save Script As</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+
+    </layout>
+   </item>
+
+
    <item>
     <layout class="QHBoxLayout" name="header_layout">
      <property name="spacing">
@@ -39,6 +123,8 @@
      </item>
     </layout>
    </item>
+
+
   </layout>
  </widget>
  <customwidgets>

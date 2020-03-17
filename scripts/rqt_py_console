@@ -4,5 +4,6 @@ import sys
 
 from rqt_gui.main import Main
 
-main = Main()
-sys.exit(main.main(sys.argv, standalone='rqt_py_console.py_console.PyConsole'))
+plugin='rqt_py_console.py_console.PyConsole'
+main = Main(filename=plugin)
+sys.exit(main.main(sys.argv, standalone=plugin))

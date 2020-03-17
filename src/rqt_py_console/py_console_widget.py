@@ -34,7 +34,9 @@ import os
 from ament_index_python.resources import get_resource
 
 from python_qt_binding import loadUi
+from python_qt_binding.QtCore import qDebug, qWarning
 from python_qt_binding.QtWidgets import QWidget
+from python_qt_binding.QtGui import QIcon
 from rqt_py_console.py_console_text_edit import PyConsoleTextEdit
 
 
@@ -50,10 +52,44 @@ class PyConsoleWidget(QWidget):
         loadUi(ui_file, self, {'PyConsoleTextEdit': PyConsoleTextEdit})
         self.setObjectName('PyConsoleWidget')
 
+        self.load_button.setIcon(QIcon.fromTheme('document-open'))
+        self.save_button.setIcon(QIcon.fromTheme('document-save'))
+        self.save_as_button.setIcon(QIcon.fromTheme('document-save-as'))
+
+        self.load_button.clicked[bool].connect(self._handle_load_clicked)
+        self.save_button.clicked[bool].connect(self._handle_save_clicked)
+        self.save_as_button.clicked[bool].connect(self._handle_save_as_clicked)
+        qWarning("yolo")
+        print("Dafuq")
+
         my_locals = {
             'context': context
         }
         self.py_console.update_interpreter_locals(my_locals)
         self.py_console.print_message(
-            'The variable "context" is set to the PluginContext of this plugin.')
-        self.py_console.exit.connect(context.close_plugin)
+            'The poop variable "context" is set to the PluginContext of this plugin.')
+
+        qWarning("brolo brolo brolo")
+
+        qWarning("yolo")
+        print("Dafuq")
+
+        # self.py_console.exit.connect(context.close_plugin)
+
+    def _handle_load_clicked(self):
+        qWarning("error")
+        qWarning(error)
+        filenames = \
+            QFileDialog.getOpenFileNames(self, self.tr('Load from Files'), '.',
+                                         self.tr('EGSE Console Python Script {.py} (*.py)'))
+        for filename in filenames[0]:
+            self.load_bag(filename)
+
+    def _handle_save_clicked(self):
+        filename = \
+            QFileDialog.getSaveFileName(self, self.tr('Save selected region to file...'), '.',
+                                        self.tr('Python files {.py} (*.py)'))
+    def _handle_save_as_clicked(self):
+        filename = \
+            QFileDialog.getSaveFileName(self, self.tr('Save selected region to file...'), '.',
+                                        self.tr('Python files {.py} (*.py)'))
